@@ -9,9 +9,11 @@
     "splash": {
       "image": "./assets/splash.txt",
       "resizeMode": "contain",
-      "backgroundColor": "#FF6B6B"
+      "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.swiftride.app"
@@ -25,8 +27,7 @@
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.txt",
-      "bundler": "metro"
+      "favicon": "./assets/favicon.txt"
     }
   }
 }

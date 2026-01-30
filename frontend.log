@@ -1,10 +1,80 @@
 Starting project at /home/interview/Desktop/opencode/ridesharing-app
-Starting Metro Bundler
-Waiting on http://localhost:8081
-Logs for your project will appear below.
-Error: Invalid mimeType for image with source: ./assets/favicon.txt
+› Port 7000 is running this app in another window
+  /home/interview/Desktop/opencode/ridesharinError: Invalid mimeType for image with source: ./assets/favicon.txt
     at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
+    at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
+    at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
+    at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)
+    at internalMiddleware (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/ExpoMiddleware.ts:44:16)
+Error: Invalid mimeType for image with source: ./assets/favicon.txt
+    at ensureImageOptionsAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:161:11)
     at generateImageAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/image-utils/src/Image.ts:175:16)
     at getFaviconFromExpoConfigAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/export/favicon.ts:83:24)
     at FaviconMiddleware.handleRequestAsync (/home/interview/Desktop/opencode/ridesharing-app/node_modules/@expo/cli/src/start/server/middleware/FaviconMiddleware.ts:29:20)

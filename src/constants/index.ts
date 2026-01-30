@@ -1,9 +1,9 @@
 export const API_BASE_URL = __DEV__ 
-  ? 'http://localhost:3000/api' 
+  ? 'http://localhost:7005/api' 
   : 'https://api.swiftride.com/api';
 
 export const SOCKET_URL = __DEV__ 
-  ? 'http://localhost:3000' 
+  ? 'http://localhost:7005' 
   : 'https://api.swiftride.com';
 
 export const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';

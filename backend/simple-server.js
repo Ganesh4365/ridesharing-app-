@@ -2,35 +2,26 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
+const { exec } = require('child_process');
 require('dotenv').config();
+
+// Allow connections from localhost:7000 (frontend port)
+const corsOptions = {
+  origin: [
+    'http://localhost:7000',
+    'http://127.0.0.1:7000',
+    'http://0.0.0.0:7000'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
 const app = express();
 const server = http.createServer(app);
 
 // Security middleware
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:8081',
-  credentials: true,
-}));
-
-// Body parsing middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// In-memory storage for testing (replace with PostgreSQL in production)
-let users = [];
-let drivers = [];
-let rides = [];
-let payments = [];
-
-// Health check
-app.get('/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'OK', 
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime()
-  });
-});
+app.use(cors(corsOptions));
 
 // Mock user database
 const mockUsers = [
@@ -62,6 +53,7 @@ const mockUsers = [
 
 // Authentication routes
 app.post('/api/auth/login', (req, res) => {
+  console.log('Login request received:', req.body);
   const { email, password } = req.body;
   
   const user = mockUsers.find(u => u.email === email && u.password === password);
@@ -455,11 +447,7 @@ app.use('*', (req, res) => {
 
 // Socket.IO setup
 const io = socketIo(server, {
-  cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:8081',
-    methods: ['GET', 'POST'],
-    credentials: true,
-  },
+  cors: corsOptions,
 });
 
 // Store connected users
@@ -662,14 +650,59 @@ io.on('connection', (socket) => {
   });
 });
 
+// Firewall and Proxy Configuration
+const configureFirewall = () => {
+  try {
+    // Log firewall status (Linux systems)
+    const { exec } = require('child_process');
+    
+    console.log('🔥 Checking firewall configuration...');
+    
+    // Check if ufw is available
+    exec('which ufw', (error, stdout, stderr) => {
+      if (!error) {
+        console.log('📋 UFW firewall detected');
+        exec('ufw status', (error, stdout, stderr) => {
+          console.log('🛡️ Firewall Status:', stdout);
+          
+          // Allow our ports
+          exec('sudo ufw allow 7000/tcp && sudo ufw allow 7005/tcp && sudo ufw reload', (error, stdout, stderr) => {
+            if (!error) {
+              console.log('✅ Firewall rules updated for ports 7000, 7005');
+            } else {
+              console.log('⚠️ Need to manually allow ports: sudo ufw allow 7000/tcp && sudo ufw allow 7005/tcp');
+            }
+          });
+        });
+      }
+    });
+    
+    // Check network interfaces
+    exec('ip addr show', (error, stdout, stderr) => {
+      if (!error) {
+        console.log('🌐 Network Interfaces:');
+        const interfaces = stdout.match(/^[0-9]+:\s+.*$/gm);
+        interfaces?.forEach(iface => console.log('   ', iface.trim()));
+      }
+    });
+    
+  } catch (err) {
+    console.log('⚠️ Firewall configuration check failed:', err.message);
+  }
+};
+
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7005;
 
 server.listen(PORT, () => {
   console.log(`🚀 SwiftRide Backend Server Running on port ${PORT}`);
   console.log(`📚 API Documentation: http://localhost:${PORT}/api`);
   console.log(`🔌 Health Check: http://localhost:${PORT}/health`);
   console.log(`📱 WebSocket: ws://localhost:${PORT}`);
+  console.log(`🔗 Frontend URL: http://localhost:7000`);
+  
+  // Configure firewall and show status
+  configureFirewall();
   
   // Add some test users
   console.log('');
@@ -677,4 +710,97 @@ server.listen(PORT, () => {
   console.log('📱 Rider: rider@swiftride.com / password123');
   console.log('🚗 Driver: driver@swiftride.com / password123');
   console.log('');
+  
+  // Startup health checks
+  setTimeout(() => {
+    console.log('🔍 RUNNING HEALTH CHECKS...');
+    
+    // Test API endpoints
+    const http = require('http');
+    
+    const testHealth = () => {
+      const options = {
+        hostname: 'localhost',
+        port: PORT,
+        path: '/health',
+        method: 'GET',
+        timeout: 2000
+      };
+      
+      const req = http.request(options, (res) => {
+        if (res.statusCode === 200) {
+          console.log('✅ Backend Health Check: PASSED');
+        } else {
+          console.log('❌ Backend Health Check: FAILED');
+        }
+      });
+      
+      req.on('error', (err) => {
+        console.log('❌ Backend Health Check: FAILED -', err.message);
+      });
+      
+      req.end();
+    };
+    
+    testHealth();
+    
+    // Test frontend accessibility
+    const testFrontend = () => {
+      const frontendOptions = {
+        hostname: 'localhost',
+        port: 7000,
+        path: '/',
+        method: 'GET',
+        timeout: 2000
+      };
+      
+      const frontendReq = http.request(frontendOptions, (res) => {
+        if (res.statusCode === 200) {
+          console.log('✅ Frontend Accessibility: PASSED');
+        } else {
+          console.log('❌ Frontend Accessibility: FAILED');
+        }
+      });
+      
+      frontendReq.on('error', (err) => {
+        console.log('⚠️ Frontend not running yet (this is normal during startup)');
+      });
+      
+      frontendReq.end();
+    };
+    
+    testFrontend();
+    
+    setTimeout(() => {
+      console.log('');
+      console.log('🌍 EXTERNAL ACCESS CHECKS:');
+      console.log('   🔗 Local Access:');
+      console.log('     • Frontend: http://localhost:7000');
+      console.log('     • Backend API: http://localhost:7005/api');
+      console.log('     • Health: http://localhost:7005/health');
+      console.log('');
+      console.log('   🔗 Network Access:');
+      exec('hostname -I', (error, stdout, stderr) => {
+        if (!error) {
+          const localIP = stdout.match(/(\d+\.\d+\.\d+\.\d+)/);
+          if (localIP) {
+            console.log(`     • Frontend: http://${localIP[1]}:7000`);
+            console.log(`     • Backend API: http://${localIP[1]}:7005/api`);
+          }
+        }
+      });
+      console.log('');
+      console.log('🔥 FIREWALL NOTES:');
+      console.log('   • If blocked, run: sudo ufw allow 7000/tcp && sudo ufw allow 7005/tcp');
+      console.log('   • To check: sudo ufw status');
+      console.log('   • For system firewall: Check your OS firewall settings');
+      console.log('');
+      console.log('📱 MOBILE ACCESS:');
+      console.log('   • Install "Expo Go" app from App Store/Play Store');
+      console.log('   • Open http://localhost:7000 in browser');
+      console.log('   • Scan QR code with Expo Go');
+      console.log('');
+    }, 3000);
+    
+  }, 2000);
 });

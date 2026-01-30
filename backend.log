@@ -1,0 +1,15 @@
+
+🚀 SWIFTRIDE BACKEND SERVER
+========================
+✅ Server is RUNNING on port 7005
+✅ Health Check: http://localhost:7005/health
+✅ API Base URL: http://localhost:7005/api
+✅ Test Accounts: http://localhost:7005/api/test-accounts
+
+🎯 FRONTEND URL: http://localhost:7000
+
+👥 TEST CREDENTIALS:
+   📱 Rider: rider@swiftride.com / password123
+   🚗 Driver: driver@swiftride.com / password123
+
+🔍 READY FOR TESTING!
