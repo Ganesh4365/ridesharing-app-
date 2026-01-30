@@ -1,0 +1,13 @@
+
+> swiftride-backend@1.0.0 start
+> node simple-server.js
+
+🚀 SwiftRide Backend Server Running on port 3000
+📚 API Documentation: http://localhost:3000/api
+🔌 Health Check: http://localhost:3000/health
+📱 WebSocket: ws://localhost:3000
+
+👥 Test Users Created:
+📱 Rider: rider@swiftride.com / password123
+🚗 Driver: driver@swiftride.com / password123
+

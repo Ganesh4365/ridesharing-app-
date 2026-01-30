@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "SwiftRide",
+    "slug": "swiftride",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.txt",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.txt",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.swiftride.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.txt",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.swiftride.app",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.txt"
+    }
+  }
+}
